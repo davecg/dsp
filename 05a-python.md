@@ -22,11 +22,13 @@ dictionary keys must be immutable.
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
+```py
 x = range(10) + range(0,10,2) #  list with non-unique numbers  
 y = set(x) # removes non-unique values (also unordered)  
 
 print len(x) # 15  
 print len(y) # 10  
+```
 
 finding an element in a set is much faster since it is implemented as a hashtable.  
 
@@ -37,24 +39,24 @@ finding an element in a set is much faster since it is implemented as a hashtabl
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
 creates a lambda function (shorthand for a one-line minifunction)
-
+```py
 mylist = ['xy','z','abc']  
 print sorted(mylist, key=lambda x: len(x)) # ['z','xy','abc']  
 print sorted(mylist) # ['abc','xy','z']  
-
+```
 ---
 
 ###Q4. List Comprehension, Map &amp; Filter
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
-
+```py
 mylist = [_**2 for _ in xrange(10) if _ % 2] # [1, 9, 25, 49, 81]  
 myaltlist = map(lambda _:_**2,filter(lambda _:_ % 2,xrange(10)))  
 
 
 myset = {_ for _ in xrange(10) if _ % 2} # {1, 3, 5, 7, 9}  
 mydict = {_:_**2 for _ in xrange(10) if _ % 2} # {1: 1, 3: 9, 5: 25, 7: 49, 9: 81}  
-
+```
 ---
 
 ###Complete the following problems by editing the files below:
