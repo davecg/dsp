@@ -8,7 +8,6 @@
 
 import pandas as pd
 
-#test
 df = pd.read_csv('football.csv')
 
 df['diff'] = abs(df['Goals'] - df['Goals Allowed'])
