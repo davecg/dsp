@@ -12,9 +12,9 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
-lists are mutable, tuples immutable.
+lists are mutable, tuples immutable.  
 
-dictionary keys must be immutable.
+dictionary keys must be immutable.  
 
 ---
 
@@ -22,13 +22,13 @@ dictionary keys must be immutable.
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
-x = range(10) + range(0,10,2) #  list with non-unique numbers
-y = set(x) # removes non-unique values (also unordered)
+x = range(10) + range(0,10,2) #  list with non-unique numbers  
+y = set(x) # removes non-unique values (also unordered)  
 
-print len(x) # 15
-print len(y) # 10
+print len(x) # 15  
+print len(y) # 10  
 
-finding an element in a set is much faster since it is implemented as a hashtable.
+finding an element in a set is much faster since it is implemented as a hashtable.  
 
 ---
 
