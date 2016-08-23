@@ -1,5 +1,14 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
+import re
+def check_tests(func,rx=re.compile(r'>>>\s*([^\n]+)\n\s*([^\n]+)')):
+    for x,y in rx.findall(func.__doc__):
+        out_x = eval(x)
+        out_y = eval(y)
+        if out_x == out_y:
+            print '{} == {} # True'.format(x,y)
+        else:
+            print '{} == {} != {} == {}'.format(x,out_x,y,out_y)
 
 
 def donuts(count):
@@ -18,9 +27,7 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    if count >= 10:
-        count = 'many'
-    return 'Number of donuts: {}'.format(count)
+    return 'Number of donuts: {}'.format(count if count < 10 else 'many')
 
 
 def both_ends(s):
@@ -39,7 +46,10 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    if len(s) < 2:
+        return ''
+    else:
+        return s[:2] + s[-2:]
 
 
 def fix_start(s):
@@ -58,7 +68,8 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    c = s[0]
+    return c + s[1:].replace(c,'*')
 
 
 def mix_up(a, b):
@@ -76,7 +87,8 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    assert len(a) >= 2 and len(b) >= 2
+    return b[:2] + a[2:] + ' ' + a[:2] + b[2:]
 
 
 def verbing(s):
@@ -93,7 +105,12 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if len(s) >= 3:
+        if s[-3:] == 'ing':
+            s += 'ly'
+        else:
+            s += 'ing'
+    return s
 
 
 def not_bad(s):
@@ -113,7 +130,8 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    # using '\b' ensures "not" and "bad" are individual words, i.e. won't match "snot bad"
+    return re.sub(r'\bnot\b(.*)\bbad\b','good',s)
 
 
 def front_back(a, b):
@@ -132,4 +150,13 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    a_n = len(a)
+    b_n = len(b)
+    a_half = a_n // 2 + a_n % 2
+    b_half = b_n // 2 + b_n % 2
+    return a[:a_half] + b[:b_half] + a[a_half:] + b[b_half:]
+
+if __name__ == '__main__':
+    for func in (donuts,both_ends,fix_start,mix_up,verbing,not_bad,front_back):
+        print '#'+func.__name__
+        check_tests(func)
