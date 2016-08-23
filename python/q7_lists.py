@@ -1,6 +1,18 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 
+import re
+from collections import defaultdict
+
+def check_tests(func,rx=re.compile(r'>>>\s*([^\n]+)\n\s*([^\n]+)')):
+    for x,y in rx.findall(func.__doc__):
+        out_x = eval(x)
+        out_y = eval(y)
+        if out_x == out_y:
+            print '{} == {} # True'.format(x,y)
+        else:
+            print '{} == {} != {} == {}'.format(x,out_x,y,out_y)
+
 
 def match_ends(words):
     """
@@ -15,7 +27,7 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    return len([_ for _ in words if len(_) >= 2 and _[0] == _[-1]])
 
 
 def front_x(words):
@@ -32,7 +44,7 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    return sorted([_ for _ in words if _.startswith('x')]) + sorted([_ for _ in words if not _.startswith('x')])
 
 
 def sort_last(tuples):
@@ -49,7 +61,7 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    return sorted(tuples,key=lambda x:x[-1])
 
 
 def remove_adjacent(nums):
@@ -68,7 +80,13 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    last_num = None
+    new_list = []
+    for x in nums:
+        if x != last_num:
+            new_list.append(x)
+            last_num = x
+    return new_list
 
 
 def linear_merge(list1, list2):
@@ -85,4 +103,15 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    counts = defaultdict(lambda: 0)
+    output = []
+    for l in (list1,list2):
+        for x in l:
+            counts[x] += 1
+    for x in sorted(counts):
+        output.extend([x]*counts[x])
+    return output
+
+if __name__ == '__main__':
+    for func in (match_ends,front_x,sort_last,remove_adjacent,linear_merge):
+        check_tests(func)
