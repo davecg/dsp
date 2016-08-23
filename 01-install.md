@@ -48,13 +48,17 @@ cross-platform.
 
 Did you install Python 2 or 3? Why?  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I have installed both.
+
+I started learning Python 2 (back when SciPy had not been ported to 3), so I am more comfortable with it.
+I know I need to start switching to Python 3 now that there is near universal support for it.
+
 
 ###Q2. Which Python Version Installed   
 
 How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+python -V
 
  
 
