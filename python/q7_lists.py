@@ -9,7 +9,8 @@ def check_tests(func,rx=re.compile(r'>>>\s*([^\n]+)\n\s*([^\n]+)')):
         out_x = eval(x)
         out_y = eval(y)
         if out_x == out_y:
-            print '{} == {} # True'.format(x,y)
+            pass
+            #print '{} == {} # True'.format(x,y)
         else:
             print '{} == {} != {} == {}'.format(x,out_x,y,out_y)
 
