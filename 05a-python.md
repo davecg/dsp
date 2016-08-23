@@ -66,27 +66,42 @@ Use Python to compute days between start and stop date.
 a.  
 
 ```py
+
+def date_diff(start,stop,fmt):
+    # This same function will be used for later problems.
+    diff = datetime.datetime.strptime(stop,fmt) - datetime.datetime.strptime(start,fmt)
+    return diff.days
+
 date_start = '01-02-2013'    
 date_stop = '07-28-2015'
+
+date_fmt = '%m-%d-%Y'
+
+print date_diff(date_start,date_stop,date_fmt) # 937
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
 
 b.  
-```
+```py
 date_start = '12312013'  
 date_stop = '05282015'  
+
+date_fmt = '%m%d%Y'
+
+print date_diff(date_start,date_stop,date_fmt) # 513
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
 
 c.  
-```
+```py
 date_start = '15-Jan-1994'      
 date_stop = '14-Jul-2015'  
+
+date_fmt = '%d-%b-%Y'
+
+print date_diff(date_start,date_stop,date_fmt) # 7850
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
