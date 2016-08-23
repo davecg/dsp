@@ -9,19 +9,19 @@ tutorial](https://web.archive.org/web/20160708171659/http://cli.learncodethehard
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
-top - display a list of processes
-screen - terminal multiplexer
-grep - pull out lines that match a pattern
-cut - split a line by a delimiter and return a specific item
-ps - process list
-ls - list directory
-cd - change directory
-sudo - make me a sandwich
-ssh - connect to another server
-scp - copy file to another server
-cp - copy file
-mv - move file
-sudo rm -rf / - some men just want to watch the world burn
+top - display a list of processes  
+screen - terminal multiplexer  
+grep - pull out lines that match a pattern  
+cut - split a line by a delimiter and return a specific item  
+ps - process list  
+ls - list directory  
+cd - change directory  
+sudo - make me a sandwich  
+ssh - connect to another server  
+scp - copy file to another server  
+cp - copy file  
+mv - move file  
+sudo rm -rf / - some men just want to watch the world burn  
 
 ---
 
@@ -36,13 +36,13 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-list dir
-list dir including hidden files
-list dir with extra info
-list dir with extra info with unit suffixes
-list dir including hidden files with extra info using unit suffixes
-list dir sorted by modified time
-list dir with extra info, colorized with trailing slash for directory
+list dir  
+list dir including hidden files  
+list dir with extra info  
+list dir with extra info with unit suffixes  
+list dir including hidden files with extra info using unit suffixes  
+list dir sorted by modified time  
+list dir with extra info, colorized with trailing slash for directory  
 
 ---
 
@@ -50,11 +50,11 @@ list dir with extra info, colorized with trailing slash for directory
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
--1 - 1 line per listing
--m - comma delimited
--L - list symbolic link target
--R - include subdirectories
--d - only directories
+-1 - 1 line per listing  
+-m - comma delimited  
+-L - list symbolic link target  
+-R - include subdirectories  
+-d - only directories  
 
 ---
 
@@ -62,7 +62,7 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-cat somefile.txt | xargs -I% echo blah blah %
+cat somefile.txt | xargs -I% echo blah blah %  
 
  
 
