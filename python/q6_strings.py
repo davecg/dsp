@@ -8,7 +8,9 @@ def check_tests(func,rx=re.compile(r'>>>\s*([^\n]+)\n\s*([^\n]+)')):
         if out_x == out_y:
             print '{} == {} # True'.format(x,y)
         else:
+            print '#'*20
             print '{} == {} != {} == {}'.format(x,out_x,y,out_y)
+            print '#'*20
 
 
 def donuts(count):
