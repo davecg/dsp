@@ -65,7 +65,7 @@ mydict = {_:_**2 for _ in xrange(10) if _ % 2} # {1: 1, 3: 9, 5: 25, 7: 49, 9: 8
 Use Python to compute days between start and stop date.   
 a.  
 
-```
+```py
 date_start = '01-02-2013'    
 date_stop = '07-28-2015'
 ```
