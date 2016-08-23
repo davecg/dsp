@@ -60,7 +60,10 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+vim
+
+I've been using it for a while, not sure of my original motivation (made more sense than Emacs I guess).
+Vim commands are also supported with pythonanywhere's web editor and on pretty much any server.
 
 --
 
@@ -68,6 +71,10 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I have used BBEdit before but think I will switch to Sublime Text.  command shift P  opens a command prompt to perform multiple actions.
+
+I have to write some research papers this year and want to try writing them in markdown, so the AcademicMarkdown plugin for Sublime Text was appealing (and ability to import citations from BibTex files).
+
+I haven't customized it much yet aside from installing a few useful modules.
 
  
