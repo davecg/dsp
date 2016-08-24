@@ -22,10 +22,10 @@ from collections import defaultdict,Counter
 
 parser = ArgumentParser()
 parser.add_argument('--text',default='hamlet.txt',type=FileType('r'))
-parser.add_argument('--line',default=380,help='Starting line number.')
-parser.add_argument('--words',default=40,help='Number of output words.')
-parser.add_argument('--ngram',default=4)
-parser.add_argument('--pickle',default='hamlet.pk')
+parser.add_argument('--line',default=380,type=int,help='Starting line number.')
+parser.add_argument('--words',default=40,type=int,help='Number of output words.')
+parser.add_argument('--ngram',default=4,type=int)
+parser.add_argument('--pickle',default='hamlet.pk',help='Save ngrams to save time.')
 args = parser.parse_args()
 
 
