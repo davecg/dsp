@@ -49,8 +49,8 @@ cross-platform.
 Did you install Python 2 or 3? Why?  
 
 > I have installed both.
-
-I started learning Python 2 (back when SciPy had not been ported to 3), so I am more comfortable with it.
+> 
+> I started learning Python 2 (back when SciPy had not been ported to 3), so I am more comfortable with it.
 I know I need to start switching to Python 3 now that there is near universal support for it.
 
 
