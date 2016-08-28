@@ -25,7 +25,9 @@ parser.add_argument('--text',default='hamlet.txt',type=FileType('r'))
 parser.add_argument('--line',default=380,type=int,help='Starting line number.')
 parser.add_argument('--words',default=40,type=int,help='Number of output words.')
 parser.add_argument('--ngram',default=4,type=int)
-parser.add_argument('--pickle',default='hamlet.pk',help='Save ngrams to save time.')
+parser.add_argument('--pickle',default=None,help='Save ngrams to save time.  Will not process text if this file exists already.')
+parser.add_argument('--first',default=None,help='Set the first word.')
+parser.add_argument('--debug',action='store_true')
 args = parser.parse_args()
 
 
@@ -87,14 +89,18 @@ def next_word(seq,ngrams=ngrams):
     state = tuple(seq[-N:])
     for ngram in ngrams[len(state)::-1]:
         if state in ngram:
-            return weighted_choice(ngram[state])
+            next_word = weighted_choice(ngram[state])
+            if args.debug:
+                print(' '.join(state),next_word,ngram[state].most_common(5),sep='; ')
+            return next_word
         else:
             state = state[1:]
     else:
         raise Exception('Something went wrong')
-            
 
 sequence = []
+if args.first is not None:
+    sequence.append(args.first)
 
 for _ in xrange(args.words):
     sequence.append(next_word(sequence))
