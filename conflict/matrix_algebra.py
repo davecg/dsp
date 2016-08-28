@@ -1,6 +1,8 @@
 # Matrix Algebra
 # coding: utf-8
 
+# See iPython Notebook for output (or run script).
+
 # In[1]:
 
 import sympy
