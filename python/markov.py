@@ -21,14 +21,17 @@ from operator import add
 from collections import defaultdict,Counter
 
 parser = ArgumentParser()
-parser.add_argument('--text',default='hamlet.txt',type=FileType('r'))
-parser.add_argument('--line',default=380,type=int,help='Starting line number.')
-parser.add_argument('--words',default=40,type=int,help='Number of output words.')
+parser.add_argument('--text',default=None,type=FileType('r'))
+parser.add_argument('--line',default=0,type=int,help='Starting line number.')
+parser.add_argument('--words',default=140,type=int,help='Number of output words.')
 parser.add_argument('--ngram',default=4,type=int)
 parser.add_argument('--pickle',default=None,help='Save ngrams to save time.  Will not process text if this file exists already.')
-parser.add_argument('--first',default=None,help='Set the first word.')
+parser.add_argument('--first',default=None,help='Set the first words (use quotes for multiple words).')
 parser.add_argument('--debug',action='store_true')
 args = parser.parse_args()
+
+assert args.pickle is not None or args.text is not None, 'Must include an argument for --text or --pickle (or  both).'
+
 
 
 sub_strings = [
@@ -45,6 +48,7 @@ def clean(line,substitutions=substitutions):
     for regex,repl in substitutions:
         line = regex.sub(repl,line)
     return line.lower().strip().split()
+
 
 if args.pickle is None or not exists(args.pickle):
     data = reduce(add,[clean(_) for _ in args.text.readlines()[args.line:] if re.search(r'\w',_)])
@@ -100,7 +104,7 @@ def next_word(seq,ngrams=ngrams):
 
 sequence = []
 if args.first is not None:
-    sequence.append(args.first)
+    sequence.extend(clean(args.first))
 
 for _ in xrange(args.words):
     sequence.append(next_word(sequence))
