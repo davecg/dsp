@@ -55,10 +55,6 @@ Here's your first chance to practice this:
 
 What is your favorite [emoji](http://www.emoji-cheat-sheet.com/)?
 
-<<<<<<< HEAD
->>:poop:
-=======
 >> :poop:
->>>>>>> 8163e8765c836aaca3c9320417fc8709fd68c285
 
 

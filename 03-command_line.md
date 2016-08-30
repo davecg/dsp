@@ -62,6 +62,7 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
+>>takes a list of strings and allows you to process them with another command
 >>cat somefile.txt | xargs -I% echo blah blah %  
 
  

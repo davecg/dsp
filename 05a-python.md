@@ -12,9 +12,8 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
-lists are mutable, tuples immutable.  
-
-dictionary keys must be immutable.  
+>> lists are mutable, tuples immutable.  
+>> dictionary keys must be immutable.  
 
 ---
 
@@ -30,7 +29,7 @@ print len(x) # 15
 print len(y) # 10  
 ```
 
-finding an element in a set is much faster since it is implemented as a hashtable.  
+>>finding an element in a set is much faster since it is implemented as a hashtable.  
 
 ---
 
@@ -38,7 +37,7 @@ finding an element in a set is much faster since it is implemented as a hashtabl
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
-creates a lambda function (shorthand for a one-line minifunction)
+>>creates a lambda function (shorthand for a one-line minifunction)
 ```py
 mylist = ['xy','z','abc']  
 print sorted(mylist, key=lambda x: len(x)) # ['z','xy','abc']  
@@ -50,6 +49,8 @@ print sorted(mylist) # ['abc','xy','z']
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 ```py
+# list|dict|set|generator comprehensions are shorthand for creating those objects.
+
 mylist = [_**2 for _ in xrange(10) if _ % 2] # [1, 9, 25, 49, 81]  
 myaltlist = map(lambda _:_**2,filter(lambda _:_ % 2,xrange(10)))  
 

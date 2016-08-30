@@ -28,6 +28,7 @@ Counter({'phd': 31, 'scd': 6, 'mph': 2, 'ms': 2, '': 1, 'md': 1, 'ma': 1, 'bsed'
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
+# assuming you wanted us to correct typo ("professor is biostatistics").
 Counter({'Professor of Biostatistics': 13, 'Assistant Professor of Biostatistics': 12, 'Associate Professor of Biostatistics': 12})
 
 
@@ -86,6 +87,7 @@ faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['P
 Print the first 3 key and value pairs of the dictionary:
 
 ```
+# key value
 Bellamy [[' Sc.D.', 'Associate Professor', 'bellamys@mail.med.upenn.edu']]
 Bilker [['Ph.D.', 'Professor', 'warren@upenn.edu']]
 Bryan [[' PhD', 'Assistant Professor', 'bryanma@upenn.edu']]
@@ -101,6 +103,7 @@ professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn
 Print the first 3 key and value pairs of the dictionary:
 
 ```
+# key value
 ('A. Russell', 'Localio') [' JD MA MPH MS PhD', 'Associate Professor', 'rlocalio@upenn.edu']
 ('Alisa Jane', 'Stephens') [' Ph.D.', 'Assistant Professor', 'alisaste@mail.med.upenn.edu']
 ('Andrea Beth', 'Troxel') [' ScD', 'Professor', 'atroxel@mail.med.upenn.edu']
@@ -109,6 +112,7 @@ Print the first 3 key and value pairs of the dictionary:
 ####Q8.  It looks like the current dictionary is printing by first name.  Print out the dictionary key value pairs based on alphabetical orders of the last name of the professors
 
 ```
+# key value
 ('Scarlett L.', 'Bellamy') [' Sc.D.', 'Associate Professor', 'bellamys@mail.med.upenn.edu']
 ('Warren B.', 'Bilker') ['Ph.D.', 'Professor', 'warren@upenn.edu']
 ('Matthew W', 'Bryan') [' PhD', 'Assistant Professor', 'bryanma@upenn.edu']
