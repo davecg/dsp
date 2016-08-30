@@ -2,6 +2,6 @@
 
 ---
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> See ThinkStats.ipynb
 
 ---
