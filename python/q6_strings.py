@@ -133,7 +133,7 @@ def not_bad(s):
     "It's bad yet not"
     """
     # using '\b' ensures "not" and "bad" are individual words, i.e. won't match "snot bad"
-    return re.sub(r'\bnot\b(.*)\bbad\b','good',s)
+    return re.sub(r'\bnot\b.*\bbad\b','good',s,re.IGNORECASE)
 
 
 def front_back(a, b):
