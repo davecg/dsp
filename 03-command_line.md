@@ -16,7 +16,7 @@ Make a cheat sheet for yourself: a list of at least **ten** commands and what th
 >>ps - process list  
 >>ls - list directory  
 >>cd - change directory  
->>sudo - make me a sandwich  
+>>sudo - [make me a sandwich](https://xkcd.com/149/)  
 >>ssh - connect to another server  
 >>scp - copy file to another server  
 >>cp - copy file  
